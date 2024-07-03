@@ -101,14 +101,44 @@ class NavbarContainer extends HTMLElement {
 customElements.define("navbar-component", NavbarContainer);
 
 // ========== Start select the mode switch button from the DOM ==========
+// const modeSwitch = document.querySelector(".mode-switch");
+// // Check if the mode switch button exists
+// if (modeSwitch) {
+//     // Toggle the 'dark' class on the document's root element
+//     // This will switch the theme to dark mode or light mode
+//     modeSwitch.addEventListener("click", function () {
+//         document.documentElement.classList.toggle("dark");
+//         modeSwitch.classList.toggle("active");
+//     });
+// }
+// ========== Start select the mode switch button from the DOM  ==========
+
 const modeSwitch = document.querySelector(".mode-switch");
+
+function applyTheme(theme) {
+    if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        modeSwitch.classList.add("active");
+    } else {
+        document.documentElement.classList.remove("dark");
+        modeSwitch.classList.remove("active");
+    }
+}
+
 // Check if the mode switch button exists
 if (modeSwitch) {
+    // Load the theme from local storage
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
+
     // Toggle the 'dark' class on the document's root element
     // This will switch the theme to dark mode or light mode
     modeSwitch.addEventListener("click", function () {
-        document.documentElement.classList.toggle("dark");
-        modeSwitch.classList.toggle("active");
+        const currentTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+
+        // Save the new theme to local storage
+        localStorage.setItem("theme", newTheme);
     });
 }
-// ========== Start select the mode switch button from the DOM  ==========
