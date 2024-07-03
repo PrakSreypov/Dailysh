@@ -1,0 +1,142 @@
+/* =========== Start note card =========== */
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.note-actions svg{
+    color: var(--main-color) !important;
+}
+
+
+.note-des{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+/* =========== Start note card =========== */
+
+/* =========== Start task card =========== */
+.task-card-wrapper {
+    padding: 8px;
+    transition: 0.2s;
+}
+
+.task-box {
+    border-radius: 30px;
+    padding: 25px 35px;
+    background-color: var(--tasks-section);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.task-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.task-box-header span {
+    color: var(--main-color);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.task-box-header .time-status {
+    color: var(--danger-color);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.task-box-header_right {
+    position: relative;
+    display: inline-block;
+}
+
+.task-box-content .box-content-header,  .box-content-des, .note-header .name{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.task-box-content-header {
+    margin-bottom: 16px;
+}
+
+.task-box-content-header p {
+    margin: 0;
+}
+
+.box-content-header {
+    margin-bottom: 0;
+}
+
+.task-btn-more {
+    padding: 0;
+    height: 14px;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+}
+
+.more-wrapper {
+    position: relative;
+}
+
+.box-content-header {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    opacity: 0.9;
+    color: var(--main-color);
+    margin-bottom: 12px;
+}
+
+.box-content {
+    display: block;
+}
+
+.box-content .task-des {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.box-content-subheader {
+    font-size: 14px;
+    color: var(--gray-color);
+    line-height: 24px;
+    width: 80px;
+    text-wrap: nowrap;
+}
+
+.box-content .task-des .box-content-des {
+    font-size: 16px;
+    color: var(--main-color);
+    line-height: 25px;
+}
+/* =========== End task card   =========== */
+
+@media screen and (max-width: 500px ) {
+    .task-box {
+        padding: 25px 20px;
+    }
+
+    .box-content-subheader {
+        width: 65px;
+    }
+}
+
+
+@media screen and (max-width: 340px ) {
+    .task-box-header_left span{
+        font-size: 12px;
+    }
+}

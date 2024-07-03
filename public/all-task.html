@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dailysh - Tasks</title>
+        <!-- CSS link  -->
+        <link rel="stylesheet" href="../src/styles/styles.css" />
+        <!-- logo -->
+        <link rel="icon" href="../src/images/logo1.png" type="image/icon type" >
+    </head>
+    <body>
+        <div class="container">
+            <!-- ========== Start nav bar  ========== -->
+            <navbar-component></navbar-component>
+            <!-- ========== End nav bar ========== -->
+
+            <main class="main-content">
+                <!-- ==========   Start sidebar bar  ========== -->
+                <sidebar-component
+                    data-source="sidebar-data"
+                ></sidebar-component>
+                <!-- ==========   End sidebar bar    ========== -->
+
+                <!-- ==========  Start tasks section   ========== -->
+                <section class="tasks-section">
+                    <!-- Start task section header  -->
+                    <div class="tasks-section-header">
+                        <p>All Tasks</p>
+                        <div class="task-actions">
+                            <button
+                                class="add-btn-responsive"
+                                title="Add New task"
+                                onclick="addTask()"
+                            >
+                                <svg
+                                    class="btn-icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-plus"
+                                >
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-add-task"
+                                onclick="addTask()"
+                            >
+                                <span class="btn-text">Add Task</span>
+                                <span class="btn-icon"
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="2"
+                                        stroke-linejoin="round"
+                                        stroke-linecap="round"
+                                        stroke="currentColor"
+                                        height="24"
+                                        fill="none"
+                                        class="svg"
+                                    >
+                                        <line
+                                            y2="19"
+                                            y1="5"
+                                            x2="12"
+                                            x1="12"
+                                        ></line>
+                                        <line
+                                            y2="12"
+                                            y1="12"
+                                            x2="19"
+                                            x1="5"
+                                        ></line></svg
+                                ></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End task section header  -->
+
+                    <!-- Start all tasks count  -->
+                    <div class="tasks-section-line">
+                        <div class="tasks-status">
+                            <div class="item-status">
+                                <span
+                                    class="status-number"
+                                    id="in-progress-task"
+                                    >0</span
+                                >
+                                <span class="status-type">In Progress</span>
+                            </div>
+                            <div class="item-status">
+                                <span class="status-number" id="upcomming-task"
+                                    >0</span
+                                >
+                                <span class="status-type">Upcoming</span>
+                            </div>
+                            <div class="item-status">
+                                <span class="status-number" id="total-tasks"
+                                    >0</span
+                                >
+                                <span class="status-type">Total tasks</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End all tasks count  -->
+
+                    <!-- Start all tasks container  -->
+                    <div class="all-task-container jsGridView" id="tasks-list">
+                        <!-- The entries task's cards will display here  -->
+                    </div>
+
+                    <div class="all-task-container jsListView" id="tasks-list">
+                        <div class="task-box">
+                            <div class="task-box-content">
+                                <div class="task-content-left">
+                                    <p class="box-content-header">
+                                        Web Designing
+                                    </p>
+                                    <div class="task-box-header_left">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18px"
+                                            height="18px"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none">
+                                                <path
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    d="M2 12c0-3.771 0-5.657 1.172-6.828C4.343 4 6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172C22 6.343 22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z"
+                                                />
+                                                <path
+                                                    stroke="currentColor"
+                                                    stroke-linecap="round"
+                                                    stroke-width="1.5"
+                                                    d="M7 4V2.5M17 4V2.5M2.5 9h19"
+                                                />
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"
+                                                />
+                                            </g>
+                                        </svg>
+                                        <span>7:00AM - 10:00AM</span>
+                                        <span>|</span>
+                                        <span class="time-status">Today</span>
+                                    </div>
+                                </div>
+
+                                <div class="task-content-middle">
+                                    <div class="task-des">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18px"
+                                            height="18px"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M14.3 21.7c-.7.2-1.5.3-2.3.3c-5.5 0-10-4.5-10-10S6.5 2 12 2c1.3 0 2.6.3 3.8.7l-1.6 1.6c-.7-.2-1.4-.3-2.2-.3c-4.4 0-8 3.6-8 8s3.6 8 8 8c.4 0 .9 0 1.3-.1c.2.7.6 1.3 1 1.8M7.9 10.1l-1.4 1.4L11 16L21 6l-1.4-1.4l-8.6 8.6zM15 17v2h8v-2z"
+                                            />
+                                        </svg>
+                                        <div class="box-content-des">
+                                            <button class="btn-progress">
+                                                <span
+                                                    class="icon-progress"
+                                                ></span
+                                                >High
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="task-des">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="1em"
+                                            height="1em"
+                                            viewBox="0 0 48 48"
+                                        >
+                                            <defs>
+                                                <mask
+                                                    id="ipTParagraphRectangle0"
+                                                >
+                                                    <g
+                                                        fill="none"
+                                                        stroke="#fff"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="4"
+                                                    >
+                                                        <path
+                                                            d="M24 9h18M24 19h18M6 29h36M6 39h36"
+                                                        />
+                                                        <path
+                                                            fill="#555"
+                                                            d="M6 9h10v10H6z"
+                                                        />
+                                                    </g>
+                                                </mask>
+                                            </defs>
+                                            <path
+                                                fill="currentColor"
+                                                d="M0 0h48v48H0z"
+                                                mask="url(#ipTParagraphRectangle0)"
+                                            />
+                                        </svg>
+                                        <div class="box-content-des">
+                                            <button class="btn-progress">
+                                                <span
+                                                    class="icon-progress"
+                                                ></span
+                                                >In Progress
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="task-des">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18px"
+                                            height="18px"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M11 6a1 1 0 1 0 0-2a1 1 0 0 0 0 2m-8.413 4.136a1.99 1.99 0 0 1 0-2.822l4.74-4.716a2 2 0 0 1 1.41-.584L11.986 2A2 2 0 0 1 14 4.01l-.024 3.363a2 2 0 0 1-.588 1.396l-4.67 4.647a2.01 2.01 0 0 1-2.835 0zm.709-2.116a.994.994 0 0 0 0 1.41l3.296 3.28c.392.39 1.026.39 1.418 0l4.67-4.647a1 1 0 0 0 .293-.698l.024-3.363a1 1 0 0 0-1.006-1.004l-3.25.013a1 1 0 0 0-.705.292z"
+                                            />
+                                        </svg>
+                                        <button class="btn-tag">
+                                            <span class="tag-decor"></span>
+                                            <div class="btn-tag-content">
+                                                <div class="tag-icon">
+                                                    <svg
+                                                        viewBox="0 0 256 256"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <rect
+                                                            fill="none"
+                                                            height="24"
+                                                            width="24"
+                                                        />
+                                                        <path
+                                                            d="M184,184H69.8L41.9,30.6A8,8,0,0,0,34.1,24H16"
+                                                            fill="none"
+                                                            stroke="#fff"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="16"
+                                                        />
+                                                        <circle
+                                                            cx="80"
+                                                            cy="204"
+                                                            fill="none"
+                                                            r="20"
+                                                            stroke="#fff"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="16"
+                                                        />
+                                                        <circle
+                                                            cx="184"
+                                                            cy="204"
+                                                            fill="none"
+                                                            r="20"
+                                                            stroke="#fff"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="16"
+                                                        />
+                                                        <path
+                                                            d="M62.5,144H188.1a15.9,15.9,0,0,0,15.7-13.1L216,64H48"
+                                                            fill="none"
+                                                            stroke="#fff"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="16"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <span class="tag-text"
+                                                    >Shopping</span
+                                                >
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="task-des">
+                                    <p class="box-content-subheader">
+                                        Description:
+                                    </p>
+                                    <p class="box-content-des">
+                                        Design responsive for ...
+                                    </p>
+                                </div> -->
+                                <div class="task-content-right">
+                                    <div class="more-wrapper">
+                                        <button class="task-btn-more">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="feather feather-more-vertical"
+                                            >
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" />
+                                            </svg>
+                                        </button>
+
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item"
+                                                >Edit</a
+                                            >
+                                            <a href="#" class="dropdown-item"
+                                                >Delete</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="all-task-container jsGridView" id="tasks-list"> -->
+                    <!-- start task card wrapper  -->
+
+                    <!-- start task card wrapper  -->
+                    <!-- </div> -->
+                    <!-- End all tasks container  -->
+                </section>
+                <!-- ==========  End tasks section     ========== -->
+
+                <!-- ==========  Start task modal   ========== -->
+                <section id="task-modal" class="modal task-modal">
+                    <div class="modal-content task-modal-content">
+                        <div
+                            class="close task-modal-close"
+                            onclick="closeTaskModal()"
+                        >
+                            &times;
+                        </div>
+
+                        <h1 class="task-modal-header">Add Task</h1>
+                        <form id="task-modal-form">
+                            <!-- task title  -->
+                            <div class="form-group">
+                                <label class="heading-title" for="task-title"
+                                    >Task Title</label
+                                >
+                                <input
+                                    type="text"
+                                    id="task-title"
+                                    name="task-title"
+                                    required
+                                    placeholder="Task Title"
+                                />
+                            </div>
+
+                            <!-- task dates -->
+                            <div class="form-group">
+                                <label class="heading-title" for="task-dates"
+                                    >Start and Due Date</label
+                                >
+                                <div class="date-group">
+                                    <input
+                                        type="date"
+                                        id="start-date"
+                                        name="startDate"
+                                        required
+                                    />
+                                    <input
+                                        type="time"
+                                        id="start-time"
+                                        name="startTime"
+                                        required
+                                    />
+                                    <span>to</span>
+                                    <input
+                                        type="time"
+                                        id="due-time"
+                                        name="dueTime"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        id="due-date"
+                                        name="dueDate"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-groups">
+                                <!-- task priority -->
+                                <div class="form-group">
+                                    <label
+                                        class="heading-title"
+                                        for="task-status"
+                                        >Priority:</label
+                                    >
+                                    <select
+                                        class="select-container"
+                                        name="task-priority"
+                                        id="task-priority"
+                                    >
+                                        <option disabled selected>
+                                            Select Priority
+                                        </option>
+                                        <option value="High">High</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Low">Low</option>
+                                    </select>
+                                </div>
+
+                                <!-- task status -->
+                                <div class="form-group">
+                                    <label
+                                        class="heading-title"
+                                        for="task-status"
+                                        >Status:</label
+                                    >
+                                    <select
+                                        class="select-container"
+                                        name="task-status"
+                                        id="task-status"
+                                    >
+                                        <option disabled selected>
+                                            Select Status
+                                        </option>
+                                        <option value="To-Do">To Do</option>
+                                        <option value="Doing">Doing</option>
+                                        <option value="Done">Done</option>
+                                    </select>
+                                </div>
+
+                                <!-- task tags -->
+                                <div class="form-group">
+                                    <label class="heading-title" for="task-tags"
+                                        >Tags:</label
+                                    >
+                                    <select
+                                        class="select-container"
+                                        name="task-tags"
+                                        id="task-tags"
+                                    >
+                                        <option disabled selected>
+                                            Select Tag
+                                        </option>
+                                        <option value="Study">Study</option>
+                                        <option value="Work">Work</option>
+                                        <option value="Travel">Travel</option>
+                                        <option value="Shopping">
+                                            Shopping
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- task description -->
+                            <div class="form-group">
+                                <label class="heading-title" for="task-des"
+                                    >Task Description:</label
+                                >
+                                <textarea
+                                    rows="15"
+                                    name="task-des"
+                                    id="task-description"
+                                    placeholder="Task Description"
+                                ></textarea>
+                            </div>
+
+                            <input
+                                class="form-actions"
+                                type="submit"
+                                value="Save"
+                            />
+                        </form>
+                    </div>
+                </section>
+                <!-- ==========  End task modal     ========== -->
+
+                <!-- ==========  Start task view modal   ========== -->
+                <section id="view-task-modal" class="modal view-modal-task">
+                    <div class="modal-content view-modal-content">
+                        <div class="close" onclick="closeViewTaskModal()">
+                            &times;
+                        </div>
+                        <div class="modal-view-info">
+                            <div class="view-group task-view-group">
+                                <p
+                                    class="heading-title"
+                                    id="view-task-title"
+                                ></p>
+                            </div>
+
+                            <div class="view-group task-view-group">
+                                <div class="view-left">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18px"
+                                        height="18px"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <g fill="none">
+                                            <path
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                d="M2 12c0-3.771 0-5.657 1.172-6.828C4.343 4 6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172C22 6.343 22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z"
+                                            />
+                                            <path
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-width="1.5"
+                                                d="M7 4V2.5M17 4V2.5M2.5 9h19"
+                                            />
+                                            <path
+                                                fill="currentColor"
+                                                d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"
+                                            />
+                                        </g>
+                                    </svg>
+                                    <p>Date:</p>
+                                </div>
+                                <div class="view-right">
+                                    <div class="right-top">
+                                        <p
+                                            class="task-info"
+                                            id="view-task-start-date"
+                                        ></p>
+                                        <p
+                                            class="task-info"
+                                            id="view-task-start-time"
+                                        ></p>
+                                    </div>
+                                    
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18px"
+                                        height="18px"
+                                        viewBox="0 0 32 32"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M3 16c0-.69.56-1.25 1.25-1.25h20.537l-7.432-7.628a1.25 1.25 0 1 1 1.79-1.744l9.497 9.747a1.246 1.246 0 0 1 0 1.75l-9.497 9.747a1.25 1.25 0 1 1-1.79-1.744l7.432-7.628H4.25C3.56 17.25 3 16.69 3 16"
+                                        />
+                                    </svg>
+                                    <div class="right-bottom">
+                                        <p
+                                            class="task-info"
+                                            id="view-task-due-date"
+                                        ></p>
+                                        <p
+                                            class="task-info"
+                                            id="view-task-due-time"
+                                        ></p>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="view-group task-view-group">
+                                <div class="view-left">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18px"
+                                        height="18px"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M14.3 21.7c-.7.2-1.5.3-2.3.3c-5.5 0-10-4.5-10-10S6.5 2 12 2c1.3 0 2.6.3 3.8.7l-1.6 1.6c-.7-.2-1.4-.3-2.2-.3c-4.4 0-8 3.6-8 8s3.6 8 8 8c.4 0 .9 0 1.3-.1c.2.7.6 1.3 1 1.8M7.9 10.1l-1.4 1.4L11 16L21 6l-1.4-1.4l-8.6 8.6zM15 17v2h8v-2z"
+                                        />
+                                    </svg>
+                                    <p>Priority:</p>
+                                </div>
+                                <p
+                                    class="task-info text-priority"
+                                    id="view-task-priority"
+                                ></p>
+                            </div>
+
+                            <div class="view-group task-view-group">
+                                <div class="view-left">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="1.2em"
+                                        height="1.2em"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M3 6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm1.5 4.5h4v-4h-4Zm8.25-5a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5zm0 6a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5zm0 6a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5zm-2.97-2.53a.75.75 0 0 1 0 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06l1.47 1.47l2.97-2.97a.75.75 0 0 1 1.06 0"
+                                        />
+                                    </svg>
+                                    <p>Status:</p>
+                                </div>
+
+                                <button class="task-info btn-progress" id="view-task-status"></button>
+                            </div>
+
+                            <div class="view-group task-view-group">
+                                <div class="view-left">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18px"
+                                        height="18px"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M11 6a1 1 0 1 0 0-2a1 1 0 0 0 0 2m-8.413 4.136a1.99 1.99 0 0 1 0-2.822l4.74-4.716a2 2 0 0 1 1.41-.584L11.986 2A2 2 0 0 1 14 4.01l-.024 3.363a2 2 0 0 1-.588 1.396l-4.67 4.647a2.01 2.01 0 0 1-2.835 0zm.709-2.116a.994.994 0 0 0 0 1.41l3.296 3.28c.392.39 1.026.39 1.418 0l4.67-4.647a1 1 0 0 0 .293-.698l.024-3.363a1 1 0 0 0-1.006-1.004l-3.25.013a1 1 0 0 0-.705.292z"
+                                        />
+                                    </svg>
+                                    <p>Tag:</p>
+                                </div>
+                                <button class="btn-tag">
+                                    <span class="tag-decor"></span>
+                                    <div class="btn-tag-content">
+                                        <div class="tag-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M10.723 3.2a.75.75 0 1 0-1.446-.4L7.763 8.25H4a.75.75 0 1 0 0 1.5h3.347l-1.528 5.5H2a.75.75 0 0 0 0 1.5h3.402L4.277 20.8a.75.75 0 0 0 1.446.4l1.236-4.45h7.443l-1.125 4.05a.75.75 0 0 0 1.446.4l1.236-4.45H20a.75.75 0 1 0 0-1.5h-3.624l1.527-5.5H22a.75.75 0 0 0 0-1.5h-3.68l1.403-5.05a.75.75 0 1 0-1.446-.4l-1.514 5.45H9.32zm4.096 12.05l1.528-5.5H8.903l-1.527 5.5z" clip-rule="evenodd"/></svg>
+                                        </div>
+                                        <span class="tag-text" id="view-task-tags"></span>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <div class="view-group task-view-group">
+                                <p class="task-info" id="view-task-des"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ==========  End task view modal     ========== -->
+            </main>
+        </div>
+
+        <script src="../src/script/components/navbar.js"></script>
+        <script src="../src/script/crud/task-crud.js"></script>
+        <script type="module" src="../src/script/components/sidebar.js"
+        ></script>
+    </body>
+</html>

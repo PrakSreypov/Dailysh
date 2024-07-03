@@ -1,0 +1,138 @@
+body {
+    background-color: var(--light-color);
+}
+
+.container-homepage {
+    background-color: var(--light-color);
+}
+
+.header-homepage .nav-homepage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 15rem;
+}
+
+.content-homepage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 80px;
+    align-items: center;
+    line-height: 22px;
+}
+
+.content-img {
+    width: 90%;
+    margin-left: 50px;
+}
+
+.left-content {
+    margin-left: 80px;
+}
+
+.left-content h1 {
+    font-size: 72px;
+    margin-bottom: 30px;
+}
+
+.slogan {
+    font-size: 24px;
+    margin: 30px 0;
+}
+
+.brand-overview {
+    color: var(--dark-color);
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.homepage-btn {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.homepage-btn span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.homepage-btn span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.homepage-btn span:not(hover) {
+    transition: all 1s;
+}
+
+.contact-btn {
+    padding: 10px 24px;
+    border-radius: 24px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+@media screen and (max-width: 1440px) {
+    .header-homepage .nav-homepage {
+        padding: 2rem 5rem;
+    }
+
+    .left-content h1 {
+        font-size: 32px;
+    }
+
+    .left-content {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .header-homepage .nav-homepage {
+        padding: 2rem 3rem;
+    }
+
+    .left-content h1 {
+        font-size: 32px;
+    }
+
+    .left-content {
+        margin-left: 5px;
+    }
+
+    .slogan {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .content-homepage {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px 40px;
+    }
+
+    .content-img {
+        width: 100%;
+        margin-left: 0px;
+    }
+}

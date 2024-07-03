@@ -1,0 +1,308 @@
+/* =========== Start add note btn =========== */
+.btn {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark-color);
+    background-color: var(--dark-color);
+    border-radius: 20px;
+}
+
+.btn,
+.btn-icon,
+.btn-text {
+    transition: all 0.3s;
+}
+
+.btn .btn-text {
+    transform: translateX(30px);
+    color: var(--light-color);
+    font-weight: 600;
+}
+
+.btn .btn-icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.btn .svg {
+    width: 24px;
+    stroke: var(--light-color);
+}
+
+.btn:hover {
+    background: var(--light-color);
+}
+
+.btn:hover .btn-text {
+    color: transparent;
+}
+
+.btn:hover .btn-icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.btn:active .button__icon {
+    background-color: #000000;
+}
+/* =========== End add note btn =========== */
+
+/* =========== Start progress btn =========== */
+.btn-progress, .Done{
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #aacdee;
+    border: 0;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.btn-progress .icon-progress {
+    width: 8px;
+    height: 8px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.btn-progress:hover {
+    background-color: #8abded;
+}
+
+.To-Do {
+    background-color: var(--red-light-color);
+}
+
+.To-Do .icon-progress {
+    background-color: var(--red-dark-color);
+}
+
+.To-Do:hover {
+    background-color: var(--red-hover-color);
+}
+
+.Doing {
+    background-color: var(--green-light-color);
+}
+
+.Doing .icon-progress {
+    background-color: var(--green-color);
+}
+
+.Doing:hover {
+    background-color: var(--green-dark-color);
+}
+
+/* =========== End progress btn   =========== */
+
+/* =========== Start priority btn =========== */
+.text-priority {
+    font-weight: 700;
+}
+
+.High, #High{
+    color: var(--danger-color) !important;
+}
+
+.Medium, #Medium{
+    color: var(--orange-color) !important;
+}
+
+.Low, #Low{
+    color: var(--green-color) !important;
+}
+/* =========== End priority btn  =========== */
+
+/* =========== Start tag btn      =========== */
+.btn-tag {
+    text-decoration: none;
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: #d5d8f0;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+}
+
+.tag-decor {
+    position: absolute;
+    inset: 0;
+    background-color: #7e89de;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 0;
+}
+
+.btn-tag-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tag-icon {
+    width: 30px;
+    height: 40px;
+    background-color: #7e89de;
+    display: grid;
+    place-items: center;
+}
+
+.tag-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tag-text {
+    display: inline-block;
+    transition: color 0.2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-tag:hover .tag-text {
+    color:var(--light-color);
+}
+
+.btn-tag:hover .tag-decor {
+    transform: translate(0);
+}
+/* =========== End tag btn      =========== */
+
+/* =========== Start task action dropdown btn =========== */
+.task-btn-more {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--main-color);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: var(--light-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+/* =========== End task action dropdown btn   =========== */
+
+/* =========== Start add btn responsive       =========== */
+.add-btn-responsive {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+/* =========== End add btn responsive       =========== */
+
+/* =========== Start responsive laptop/tablet screen  =========== */
+@media screen and (max-width: 1245px) {
+    .btn {
+        width: 130px;
+    }
+
+    .btn .btn-icon {
+        transform: translateX(90px);
+    }
+
+    .btn:hover .btn-icon {
+        width: 130px;
+        transform: translateX(0);
+    }
+
+}
+/* =========== End responsive laptop/tablet screen   =========== */
+
+@media screen and (max-width: 500px ) {
+
+    .btn {
+        /* padding: 2px 5px; */
+        width:120px;
+    }
+
+    .btn .btn-icon {
+        display: none;
+    }
+
+    .btn-progress {
+        padding: 2px 5px;
+    } 
+
+    .tag-icon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .tag-text {
+        padding: 0 6px;
+        padding-right: 8px;
+    }
+
+    .add-btn-responsive {
+        display: flex;
+    }
+
+    .btn {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 340px ) {
+    .btn {
+        width:90px;
+        height: 30px;
+    }
+
+    .btn-text {
+        font-size: 10px;
+        text-align: center;
+        transform: translateX(25px) !important;
+    }
+}

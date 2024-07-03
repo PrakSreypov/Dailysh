@@ -1,0 +1,83 @@
+.jsGridView {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.jsListView .task-box .task-box-content {
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-content-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 12rem;
+    text-wrap: nowrap;
+}
+
+.task-content-middle {
+    display: flex;
+}
+
+.jsListView .box-content-header {
+    margin-bottom: 0px;
+}
+
+.jsListView .task-box-header_left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.jsListView .task-content-middle .task-des{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 8rem;
+}
+
+.jsListView {
+    display: none;
+}
+
+@media screen and (max-width: 1700px) {
+    .jsGridView {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .time-status {
+        display: block;
+    }
+
+    .time-split {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .jsGridView {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .jsGridView {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .jsGridView {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 734px) {
+    .jsGridView {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

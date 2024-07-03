@@ -1,0 +1,305 @@
+/* =========== Start modal =========== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: var(--modal-bg);  
+}
+
+.modal-content {
+    background-color: var(--main-color-r);
+    margin: 10px auto;
+    padding: 10px;
+    width: 85%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.task-modal-content {
+    height: auto;
+}
+
+.close {
+    color: var(--main-color);
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.task-modal-header {
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+form {
+    padding: 80px;
+}
+
+form label {
+    font-size: 18px !important;
+}
+
+.form-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px; 
+}
+
+.form-group input,
+.form-group textarea {
+    margin-top: 10px; 
+    padding: 20px; 
+    width: 100%; 
+    border-radius: 0.375rem; 
+    border: 1px solid var(--modal-input-border);
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+.form-actions {
+    padding: 12px 32px; 
+    font-weight: bold; 
+    border-radius: 0.375rem; 
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.form-actions button:hover {
+    opacity: 0.8;
+}
+
+.date-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-container {
+    width: 24.5rem;
+    padding: 1.1rem;
+    border: 1px solid var(--modal-input-border);
+    border-radius: 0.375rem;
+    background-color: var(--light-color);
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin-top: 10px;
+    color: var(--secondary-color);
+}
+
+.select-container:focus {
+    border: 2px solid;
+    border-color: var(--color-blue-dark);
+}
+
+
+/* =========== End modal =========== */
+
+/* =========== Start modal note view =========== */
+.modal-view-info {
+    padding: 50px 70px;
+}
+
+.view-group {
+    margin: 5px;
+}
+
+.view-modal-content {
+    overflow: scroll;
+}
+
+.note-time-view {
+    text-align: left !important;
+}
+
+.note-des-view {
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    line-height: 1.6;
+    color: var(--main-color);
+    white-space: pre-wrap;
+    font-size: 17px;
+}
+/* =========== End modal note view =========== */
+
+/* =========== Start modal task view =========== */
+.task-view-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.view-left {
+    display: flex;
+    gap: 15px;
+    width: 150px;
+    margin: 5px 0;
+
+}
+
+.view-right, .right-top, .right-bottom {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.view-right p{
+    color: var(--main-color);
+}
+
+.task-view-group svg, p{
+    color: var(--gray-color);
+}
+
+
+
+.task-info {
+    color: var(--dark-color);
+    font-size: 16px;
+    line-height: 32px;
+}
+
+#view-task-status {
+    font-size: 12px;
+    padding: 2px 40px;
+}
+
+#view-task-title {
+    line-height: 40px;
+}
+
+#view-task-des {
+    margin-top: 30px;
+    white-space: pre-wrap;
+    color: var(--main-color);
+}
+
+#view-task-title {
+    margin: 20px 0;
+    font-size: 36px;
+}
+/* =========== Start modal task view =========== */
+
+@media screen and (max-width: 2290px) {
+    .form-groups {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .view-left {
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 1630px) {
+    .form-groups {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .modal-view-info {
+        padding: 50px 60px;
+    }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    form {
+        padding: 40px;
+    }
+
+    .select-container {
+        max-width: 18rem;
+    }
+
+    .modal-content {
+        width: 88%;
+    }
+
+    .date-group {
+        display: block;
+    }
+
+    .note-modal-content {
+        margin: 18% auto;
+    }
+
+    .modal-view-info {
+        padding: 50px 20px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 730px) {
+    .view-right {
+        display: block;
+    }
+
+    .view-right svg {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .select-container {
+        max-width: 15rem;
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px !important;
+    }
+
+    .right-top, .right-bottom {
+        display: block;
+        gap: 5px;
+    }
+
+    .view-right p {
+        font-size: 14px;
+    }
+
+    .modal-view-info {
+        padding: 50px 10px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .select-container {
+        max-width: 12rem;
+        padding: 20px;
+    }
+
+    .view-left {
+        width: 90px;
+    }
+}

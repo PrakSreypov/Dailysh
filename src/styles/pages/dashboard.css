@@ -1,0 +1,259 @@
+/* =========== Start tasks section =========== */
+.tasks-section {
+    flex: 1;
+    background-color: var(--tasks-section);
+    border-radius: 32px;
+    padding: 32px 32px 0 32px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 17rem;
+}
+
+.tasks-section-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+}
+
+.tasks-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    color: var(--main-color);
+}
+
+.tasks-section-header p {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    opacity: 0.9;
+    margin: 0;
+    color: var(--main-color);
+}
+
+.tasks-section-header .time {
+    font-size: 20px;
+}
+
+.tasks-status {
+    display: flex;
+}
+
+.item-status {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+.item-status:not(:last-child) .status-type:after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translatey(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+}
+
+.status-number {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.status-type {
+    position: relative;
+    padding-right: 24px;
+    color: var(--secondary-color);
+}
+
+.view-actions {
+    display: flex;
+    align-items: center;
+}
+
+.view-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+    margin-left: 8px;
+    transition: 0.2s;
+}
+
+.view-btn.active {
+    background-color: var(--link-color-active-bg);
+    color: var(--link-color-active);
+}
+
+.task-actions{
+    display: flex;
+    gap: 12px;
+}
+/* =========== End tasks section =========== */
+
+/* =========== Start notes section =========== */
+.notes-section {
+    padding-bottom: 32px;
+    background-color: var(--tasks-section);
+    margin-left: 20px;
+    flex: 1;
+    /* width: 100%; */
+    border-radius: 30px;
+    position: relative;
+    overflow: auto;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+}
+
+.notes-section .notes-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+    border: none;
+    background-color: transparent;
+    color: var(--main-color);
+    display: none;
+}
+.notes-section.show {
+    transform: translateX(0);
+    opacity: 1;
+    margin-left: 0;
+}
+.notes-section .tasks-section-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 32px 24px 0 24px;
+    background-color: var(--tasks-section);
+}
+.note-box {
+    border-top: 1px solid var(--note-box-border);
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.note-box:hover {
+    background-color: var(--note-box-hover);
+}
+.note-box:hover + .note-box {
+    border-top-color: var(--link-color-hover);
+}
+.note-box img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+}
+.note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.note-header .name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--main-color);
+    margin: 0;
+}
+.note-content {
+    padding-left: 16px;
+    width: 100%;
+}
+
+.note-line {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 8px 0;
+    color: var(--gray-color);
+}
+.note-line.time {
+    text-align: right;
+    margin-bottom: 0;
+}
+/* =========== End notes section =========== */
+
+/* =========== Start responsive laptop/tablet screen  =========== */
+@media screen and (max-width: 1200px) {
+    .tasks-section {
+        margin-left: 30px;
+    }
+}
+/* =========== End responsive laptop/tablet screen    =========== */
+
+/* =========== Start responsive mobile screen  =========== */
+@media screen and (max-width: 900px) {
+    .main-content {
+        display: block !important;
+    }
+
+    .notes-section {
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+}
+/* =========== End responsive mobile screen    =========== */
+
+@media screen and (max-width: 500px ) {
+    .tasks-section, .notes-section {
+        margin: 15px 10px !important;
+    }
+    /* .tasks-section-header {
+        display: block;       
+    } */
+
+
+
+    .task-actions {
+        margin-top: 10px;
+    }
+
+    .status-type {
+        font-size: 10px;
+    }
+
+    .item-status {
+        margin-right: 0;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .tasks-section {
+        padding: 20px;
+    }
+    
+    .notes-section {
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 380px ) {
+    .status-type {
+        font-size: 8px;
+    }
+
+    .status-number {
+        font-size: 18px;
+    }
+
+    .tasks-status, .item-status {
+        display: block;
+    }
+}

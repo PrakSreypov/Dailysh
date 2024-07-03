@@ -1,0 +1,11 @@
+.note-page {
+    margin-left: 17rem;
+}
+
+/* =========== Start responsive laptop/tablet screen  =========== */
+@media screen and (max-width: 1200px) {
+    .note-page {
+        margin-left: 30px;
+    }
+}
+/* =========== End responsive laptop/tablet screen    =========== */

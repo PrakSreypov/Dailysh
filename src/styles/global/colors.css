@@ -1,0 +1,61 @@
+:root {
+    --bg-container: #f3f6fd;
+    --main-color: #1f1c2e;
+    --main-color-r: #fff;
+    --secondary-color: #4a4a4a;
+    --nav-bg-color: #f3f6fd;
+    --sidebar-bg-color: #fff;
+    --sidebar-link-bg-color: #dee2e6;
+    --link-color: #1f1c2e;
+    --link-color-hover: #d6ccc2;
+    --link-color-active: #fff;
+    --link-color-active-bg: #1f1c2e;
+    --tasks-section: #fff;
+    --note-box-hover: #e6e6e6;
+    --note-box-border: #e9ebf0;
+    --more-list-bg-hover: #f6fbff;
+    --more-list-shadow: rgba(209, 209, 209, 0.4);
+    --button-bg: #1f1c24;
+    --search-area-bg: #fff;
+    --light-color: #fff;
+    --dark-color: #1f1c2e;
+    --danger-color: #d11d27;
+    --color-blue-dark: #3182ce;
+    --color-blue-light: rgba(49, 130, 206, 0.3);
+    --gray-color: #7f7e7e;
+    --orange-color: rgb(234, 158, 18);
+    --yellow-light-color: #eecc7591;
+    --yellow-dark-color: #eac055c2;
+    --green-light-color: #D0E7D5;
+    --green-dark-color: #9cd9aa;
+    --green-color: rgb(15, 171, 15);
+    --red-light-color: #fa8c8a;
+    --red-dark-color: #E53C38;
+    --red-hover-color: #f139367e;
+    --modal-bg: rgba(0, 0, 0, 0.4);
+    --modal-input-border: #dddddd;
+}
+
+.dark:root {
+    --bg-container: #111827;
+    --main-color: #fff;
+    --main-color-r: #1f2937;
+    --secondary-color: rgba(121, 121, 121, 0.8);
+    --nav-bg-color: #111827;
+    --sidebar-bg-color: #111827;
+    --sidebar-link-bg-color: #3a3a3a8c;
+    --tasks-section: #1f2937;
+    --link-color: rgba(255, 255, 255, 0.8);
+    --link-color-hover: rgba(195, 207, 244, 0.1);
+    --link-color-active-bg: rgba(195, 207, 244, 0.2);
+    --button-bg: #1f2937;
+    --search-area-bg: #1f2937;
+    --note-box-hover: #243244;
+    --note-box-border: rgba(255, 255, 255, 0.1);
+    --light-font: rgba(255, 255, 255, 0.8);
+    --more-list-bg: #2f3142;
+    --more-list-bg-hover: rgba(195, 207, 244, 0.1);
+    --more-list-shadow: rgba(195, 207, 244, 0.1);
+    --note-btn: rgba(195, 207, 244, 0.1);
+    --gray-color: #bebebe;
+}

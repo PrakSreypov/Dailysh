@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dailysh - Notes</title>
+        <!-- CSS link  -->
+        <link rel="stylesheet" href="../src/styles/styles.css" />
+        <!-- logo -->
+        <link rel="icon" href="../src/images/logo1.png" type="image/icon type" >
+    </head>
+    <body>
+        <div class="container">
+            <!-- ========== Start nav bar  ========== -->
+            <navbar-component></navbar-component>
+            <!-- ========== End nav bar ========== -->
+
+            <main class="main-content">
+                <!-- ==========   Start sidebar bar  ========== -->
+                <sidebar-component data-source = 'sidebar-data'></sidebar-component>
+                <!-- ==========   End sidebar bar    ========== -->
+
+                <!-- ==========  Start notes section   ========== -->
+                <section class="note-page notes-section">
+                    <!-- Start note header  -->
+                    <header class="tasks-section-header">
+                        <p>Notes</p>
+                        <button
+                                class="add-btn-responsive"
+                                title="Add New task"
+                                onclick="openCreateModal()"
+                            >
+                                <svg
+                                    class="btn-icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-plus"
+                                >
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </button>
+                        <button
+                            type="button"
+                            class="btn"
+                            onclick="openCreateModal()"
+                        >
+                            <span class="btn-text">Take note</span>
+                            <span class="btn-icon"
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke-linejoin="round"
+                                    stroke-linecap="round"
+                                    stroke="currentColor"
+                                    height="24"
+                                    fill="none"
+                                    class="svg"
+                                >
+                                    <line y2="19" y1="5" x2="12" x1="12"></line>
+                                    <line
+                                        y2="12"
+                                        y1="12"
+                                        x2="19"
+                                        x1="5"
+                                    ></line></svg
+                            ></span>
+                        </button>
+                    </header>
+                    <!-- End note header  -->
+
+                    <!-- Start notes container -->
+                    <section class="notes" id="note-list">
+                        <!-- The entries note's cards will display here  -->
+                    </section>
+                    <!-- Start notes container -->
+                </section>
+                <!-- ==========  End notes section     ========== -->
+
+                <!-- ==========  Start note modal   ========== -->
+                <section id="note-modal" class="modal note-modal">
+                    <div class="modal-content note-modal-content">
+                        <span class="close" onclick="closeModal()"
+                            >&times;</span
+                        >
+                        <form id="modal-note-form">
+                            <div class="form-group">
+                                <label class="heading-title" for="name"
+                                    >Title</label
+                                >
+                                <input
+                                    type="text"
+                                    id="modal-note-title"
+                                    name="note-title"
+                                    required
+                                    placeholder="Note Title"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label class="heading-title" for="date"
+                                    >Date</label
+                                >
+                                <input
+                                    type="date"
+                                    id="modal-note-date"
+                                    name="note-date"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label class="heading-title" for="description"
+                                    >Description</label
+                                >
+                                <textarea
+                                    name="note-des"
+                                    id="modal-note-des"
+                                    placeholder="Task Description"
+                                    rows="20"
+                                ></textarea>
+                            </div>
+                            <input
+                                class="form-actions"
+                                type="submit"
+                                value="Save"
+                            />
+                        </form>
+                    </div>
+                </section>
+                <!-- ==========  End note modal     ========== -->
+
+                <!-- ==========  Start note view modal   ========== -->
+                <section id="view-note-modal" class="modal view-modal-view">
+                    <div class="modal-content view-modal-content">
+                        <div class="close" onclick="closeViewModal()">
+                            &times;
+                        </div>
+                        <div class="modal-view-info">
+                            <div class="view-group">
+                                <p
+                                    class="note-line time note-time-view"
+                                    id="view-note-date"
+                                ></p>
+                            </div>
+                            <div class="view-group">
+                                <h2
+                                    class="heading-title"
+                                    id="view-note-title"
+                                ></h2>
+                            </div>
+
+                            <div class="view-group">
+                                <p class="note-des-view" id="view-note-des"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==========  End note view modal     ========== -->
+            </main>
+        </div>
+
+        <script src="../src/script/components/navbar.js"></script>
+        <script src="../src/script/crud/note-crud.js"></script>
+        <script type="module" src="../src/script/components/sidebar.js"></script>
+    </body>
+</html>
