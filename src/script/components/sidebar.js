@@ -24,6 +24,7 @@ const SidebarContainer = (data) => {
                     </a>
                 `).join('')}
             </div>
+            <footer>Created By Prak Sreypov</footer>
         </div>
     `;
 };

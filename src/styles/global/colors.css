@@ -34,6 +34,7 @@
     --red-hover-color: #f139367e;
     --modal-bg: rgba(0, 0, 0, 0.4);
     --modal-input-border: #dddddd;
+    --footer-bg-color: #dee2e6;
 }
 
 .dark:root {
@@ -58,4 +59,5 @@
     --more-list-shadow: rgba(195, 207, 244, 0.1);
     --note-btn: rgba(195, 207, 244, 0.1);
     --gray-color: #bebebe;
+    --footer-bg-color: #fff;
 }
