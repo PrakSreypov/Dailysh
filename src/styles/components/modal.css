@@ -73,6 +73,7 @@ form label {
     border: 1px solid var(--modal-input-border);
     font-size: 16px;
     color: var(--secondary-color);
+    resize: none;
 }
 
 .form-actions {
