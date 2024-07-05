@@ -101,18 +101,6 @@ class NavbarContainer extends HTMLElement {
 customElements.define("navbar-component", NavbarContainer);
 
 // ========== Start select the mode switch button from the DOM ==========
-// const modeSwitch = document.querySelector(".mode-switch");
-// // Check if the mode switch button exists
-// if (modeSwitch) {
-//     // Toggle the 'dark' class on the document's root element
-//     // This will switch the theme to dark mode or light mode
-//     modeSwitch.addEventListener("click", function () {
-//         document.documentElement.classList.toggle("dark");
-//         modeSwitch.classList.toggle("active");
-//     });
-// }
-// ========== Start select the mode switch button from the DOM  ==========
-
 const modeSwitch = document.querySelector(".mode-switch");
 
 function applyTheme(theme) {
@@ -142,3 +130,4 @@ if (modeSwitch) {
         localStorage.setItem("theme", newTheme);
     });
 }
+// ========== Start select the mode switch button from the DOM  ==========
